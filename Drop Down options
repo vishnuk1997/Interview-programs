@@ -1,0 +1,68 @@
+package org.org;
+
+import java.util.Date;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
+
+public class Project {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", 
+				"C:\\Users\\Vishnu\\eclipse-workspace\\Selenium\\Drivers\\chromedriver.exe");
+		
+
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		
+		
+		WebDriver driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
+		
+		driver.get("https://adactinhotelapp.com/");
+		
+		
+		WebElement username = driver.findElement(By.id("username"));
+		username.sendKeys("vishnutesting");
+		
+		WebElement password = driver.findElement(By.name("password"));
+		password.sendKeys("Divagar1997#");
+		
+		WebElement login = driver.findElement(By.id("login"));
+		login.click();
+		
+		WebElement option1 = driver.findElement(By.name("location"));
+		Select location = new Select(option1);
+		
+
+		
+		location.selectByVisibleText("Brisbane");
+		
+		WebElement option2 = driver.findElement(By.id("hotels"));
+		Select hotel = new Select(option2);
+		
+		hotel.selectByIndex(2);
+		
+		WebElement option3 = driver.findElement(By.name("room_type"));
+		Select roomtype = new Select(option3);
+		 
+	    roomtype.selectByVisibleText("Deluxe");
+	    
+	    WebElement option4 = driver.findElement(By.id("room_nos"));
+	    Select NoOfRooms = new Select(option4);
+	    
+	    NoOfRooms.selectByValue("3");
+      
+	    WebElement InDate = driver.findElement(By.id("datepick_in"));
+	    InDate.clear();
+	    InDate.sendKeys("01/01/2023");
+	    
+	    WebElement OutDate = driver.findElement(By.name("datepick_out"));
+	    OutDate.clear();
+	    OutDate.sendKeys("01/01/2023");
