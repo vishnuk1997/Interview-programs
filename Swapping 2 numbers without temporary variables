@@ -1,0 +1,18 @@
+package org.org;
+
+public class SwapWithoutVariable {
+	public static void main(String[] args) {
+		Swap2Numbers numbers = new Swap2Numbers();
+		// without using third variable
+		int firstValue = 30;
+		int secondValue = 50;
+		System.out.println("Before swapping"+ " first value : " + firstValue + " second value: " + secondValue);
+		
+		firstValue=firstValue-secondValue;
+		secondValue=firstValue+secondValue;
+		firstValue=secondValue-firstValue;
+		System.out.println("After swapping"+ " first value : " + firstValue + " second value: " + secondValue);
+		
+	}
+
+}
