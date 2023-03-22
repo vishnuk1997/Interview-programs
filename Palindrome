@@ -1,0 +1,22 @@
+package org.interview;
+
+public class Palindrome2 {
+
+	public static void main(String[] args) {
+		String given = "LIRIL";
+		String reverse ="";
+		for(int i=given.length()-1;i>=0;i--) {
+			reverse = reverse+given.charAt(i);
+			
+		}
+		System.out.println(reverse);
+		if(given.equals(reverse)) {
+			System.out.println("Palindrome");
+		}
+		else {
+			System.out.println("Not Palindrome");
+		}
+
+	}
+
+}
